@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="memory.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Memory Game</title>
+</head>
+<body>
+	<div id="row11" class="card"><img src="cardback.jpg" id='c1' width="100%" height="100%"></img></div>
+	<div id="row12" class="card"><img src="cardback.jpg" id='c2' width="100%" height="100%"></img></div>
+	<div id="row13" class="card"><img src="cardback.jpg" id='c3' width="100%" height="100%"></img></div>
+	<div id="row14" class="card"><img src="cardback.jpg" id='c4' width="100%" height="100%"></img></div>
+
+	<div id="row21" class="card"><img src="cardback.jpg" id='c5' width="100%" height="100%"></div>
+	<div id="row22" class="card"><img src="cardback.jpg" id='c6' width="100%" height="100%"></div>
+	<div id="row23" class="card"><img src="cardback.jpg" id='c7' width="100%" height="100%"></div>
+	<div id="row24" class="card"><img src="cardback.jpg" id='c8' width="100%" height="100%"></div>
+
+	<div id="row31" class="card"><img src="cardback.jpg" id='c9' width="100%" height="100%"></div>
+	<div id="row32" class="card"><img src="cardback.jpg" id='c10' width="100%" height="100%"></div>
+	<div id="row33" class="card"><img src="cardback.jpg" id='c11' width="100%" height="100%"></div>
+	<div id="row34" class="card"><img src="cardback.jpg" id='c12' width="100%" height="100%"></div>
+
+	<div id="row41" class="card"><img src="cardback.jpg" id='c13' width="100%" height="100%"></div>
+	<div id="row42" class="card"><img src="cardback.jpg" id='c14' width="100%" height="100%"></div>
+	<div id="row43" class="card"><img src="cardback.jpg" id='c15' width="100%" height="100%"></div>
+	<div id="row44" class="card"><img src="cardback.jpg" id='c16' width="100%" height="100%"></div>
+
+	<div id="button"><button id="reset">Reset</button></div>
+	<div id="title"><p>Memory Game</p></div>
+	<div id="copywrite"><p>&#169; Aidan Finnegan</p></div>
+	
+	<div id="match"></div>
+
+
+	<script>
+		var pictures = ['fish.jpg','fish.jpg','chicken.jpg','chicken.jpg','cow.png','cow.png',
+						'bear.jpg','bear.jpg','rat.jpg','rat.jpg','monkey.jpg','monkey.jpg',
+						'llama.jpg','llama.jpg','whale.jpg','whale.jpg']
+
+		var numTurned = 0;
+		var card1 = "";
+		var card1Id = "";
+		var card2Id = "";
+		var card2 = "";
+		var delay = 1000;
+		var match = 0;
+
+		
+
+		$(document).ready( function() {
+			resetGame();
+			$("#reset").click(function() {
+			resetGame();
+			});
+
+			$("#c1").click(function() {
+			if(numTurned < 2) {	
+					numTurned++;
+					$("#c1").attr("src", pictures[0]);
+					if(numTurned == 1) {
+						card1 = pictures[0];
+						card1id = "c1"
+					}
+					else if(numTurned == 2){
+						card2 = pictures[0];
+						card2id = "c1";
+						setTimeout(resetCards, delay)
+
+					}
+				}
+			});
+
+			$("#c2").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c2").attr("src", pictures[1]);
+				if(numTurned == 1) {
+					card1 = pictures[1];
+					card1id = "c2"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[1];
+					card2id = "c2";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c3").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c3").attr("src", pictures[2]);
+				if(numTurned == 1) {
+					card1 = pictures[2];
+					card1id = "c3"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[2];
+					card2id = "c3";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c4").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c4").attr("src", pictures[3]);
+				if(numTurned == 1) {
+					card1 = pictures[3];
+					card1id = "c4"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[3];
+					card2id = "c4";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c5").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c5").attr("src", pictures[4]);
+				if(numTurned == 1) {
+					card1 = pictures[4];
+					card1id = "c5"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[4];
+					card2id = "c5";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c6").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c6").attr("src", pictures[5]);
+				if(numTurned == 1) {
+					card1 = pictures[5];
+					card1id = "c6"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[5];
+					card2id = "c6";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c7").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c7").attr("src", pictures[6]);
+				if(numTurned == 1) {
+					card1 = pictures[6];
+					card1id = "c7"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[6];
+					card2id = "c7";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c8").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c8").attr("src", pictures[7]);
+				if(numTurned == 1) {
+					card1 = pictures[7];
+					card1id = "c8"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[7];
+					card2id = "c8";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c9").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c9").attr("src", pictures[8]);
+				if(numTurned == 1) {
+					card1 = pictures[8];
+					card1id = "c9"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[8];
+					card2id = "c9";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c10").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c10").attr("src", pictures[9]);
+				if(numTurned == 1) {
+					card1 = pictures[9];
+					card1id = "c10"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[9];
+					card2id = "c10";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c11").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c11").attr("src", pictures[10]);
+				if(numTurned == 1) {
+					card1 = pictures[10];
+					card1id = "c11"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[10];
+					card2id = "c11";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c12").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c12").attr("src", pictures[11]);
+				if(numTurned == 1) {
+					card1 = pictures[11];
+					card1id = "c12"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[11];
+					card2id = "c12";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c13").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c13").attr("src", pictures[12]);
+				if(numTurned == 1) {
+					card1 = pictures[12];
+					card1id = "c13"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[12];
+					card2id = "c13";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c14").click(function() {
+				if(numTurned < 2) {
+				numTurned++;
+				$("#c14").attr("src", pictures[13]);
+				if(numTurned == 1) {
+					card1 = pictures[13];
+					card1id = "c14"
+				}
+				else if(numTurned == 2){
+					card2 = pictures[13];
+					card2id = "c14";
+					setTimeout(resetCards, delay)
+
+				}
+			}
+			});
+			$("#c15").click(function() {
+				if(numTurned < 2) {
+					numTurned++;
+					$("#c15").attr("src", pictures[14]);
+					if(numTurned == 1) {
+						card1 = pictures[14];
+						card1id = "c15"
+					}
+					else if(numTurned == 2){
+						card2 = pictures[14];
+						card2id = "c15";
+						setTimeout(resetCards, delay)
+
+					}
+				}
+			});
+			$("#c16").click(function() {
+				if(numTurned < 2) {
+					numTurned++;
+					$("#c16").attr("src", pictures[15]);
+					if(numTurned == 1) {
+						card1 = pictures[15];
+						card1id = "c16"
+					}
+					else if(numTurned == 2){
+						card2 = pictures[15];
+						card2id = "c16";
+						setTimeout(resetCards, delay)
+
+					}
+				}
+			});
+		});
+
+		function resetCards() {
+			if(card1 == card2){
+				//match
+				console.log("111")
+				$("#" + card1id).addClass("hidden");
+				$("#" + card2id).addClass("hidden");
+				match++;
+				$("#match").html('<p  id="matchesp">Matches: '+ match +'</p>');
+				if(match == 8){
+					alert("good job"); 
+				}
+			}
+			else{
+				//no match
+				console.log("ggg");
+				$("#" + card1id).attr("src","cardback.jpg");				
+				$("#" + card2id).attr("src","cardback.jpg");
+			}
+
+			numTurned = 0;
+			card1 = "";
+			card1Id = "";
+			card2Id = "";
+			card2 = "";
+			
+		}
+		function resetGame() {
+			//reset all variables to initial values
+			numTurned = 0;
+			card1=card2=card1id=card2id= "";
+			match = 0;
+			$("#match").html('<p  id="matchesp">Matches: '+ match +'</p>');
+			
+			//change all cards to card back image
+			//$(".c1").attr("src","cardback.jpg");
+			for(var i=1;i<=pictures.length;i++){
+				$("#c"+i).attr("src","cardback.jpg");
+				$("#c"+i).removeClass("hidden");
+			}
+
+			//shuffle pictures array
+			shuffleCards();
+		}
+		function shuffleCards() {
+			var t;
+			for(var i =0;i<pictures.length;i++){
+				var idx = Math.floor(Math.random()*pictures.length);
+				t = pictures[idx];
+				pictures[idx] = pictures[i];
+				pictures[i] = t;
+			}
+		}
+		
+	</script>
+</body>
+	
+</html>

@@ -1,0 +1,4 @@
+Georgia,18,10,72
+Florida,10,18,68
+South Carolina,15,15,72
+Maine,20,10,65

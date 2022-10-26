@@ -1,0 +1,106 @@
+import java.util.Scanner;
+
+
+public class War {
+
+
+	public static void main(String [] args) {
+		Scanner input = new Scanner(System.in);
+		Hand hand1 = new Hand();
+		Hand hand2 = new Hand();
+		Hand spoilsOfWar = new Hand();
+		Deck deck = new Deck();
+		Card p1Card, p2Card; 
+
+		String userInput = "";
+		boolean gameOver = false;
+		boolean warOn = false;
+
+		printWelcome();
+
+		input.nextLine();
+
+		//shuffle the deck
+		deck.shuffle();
+		//deal out hands
+		for (int i=0;i<26;i++) {
+			hand1.addCard(deck.dealCard());
+			hand2.addCard(deck.dealCard());
+		}
+
+		//play game
+		while(!gameOver) {
+			//get next cards from users
+			p1Card = hand1.getNextCard();
+			p2Card = hand2.getNextCard();
+			spoilsOfWar.addCard(p1Card);
+			spoilsOfWar.addCard(p2Card);
+
+
+			System.out.println("\nPlayer 1: " + p1Card.toString());
+			System.out.println("Player 2: " + p2Card.toString());
+
+
+			if(p1Card.compareTo(p2Card) < 0) {
+				//p2 won -- give p2 the cards in the spoils hand
+				System.out.print("\nPlayer 2 wins: ");
+				while(spoilsOfWar.hasNext()) {
+					Card temp = spoilsOfWar.getNextCard();
+					System.out.print(temp.toString() + " ");
+					hand2.addCard(temp);
+				}
+				System.out.println("\nP1: " + hand1.size() + " , P2: " + hand2.size());
+			}
+			else if(p1Card.compareTo(p2Card) > 0) {
+				//p1 won -- give p1 the cards in the spoils hand
+				System.out.print("\nPlayer 1 wins: ");
+				while(spoilsOfWar.hasNext()) {
+					Card temp = spoilsOfWar.getNextCard();
+					System.out.print(temp.toString() + " ");
+					hand1.addCard(temp);
+				}
+				System.out.println("\nP1: " + hand1.size() + " , P2: " + hand2.size());
+			}
+			else {
+				System.out.println("\nWar!");
+				System.out.println("Dealing three more down...");
+				for (int i=0;i<3;i++) {
+					Card c1 = hand1.getNextCard();
+					Card c2 = hand2.getNextCard();
+					if(c1 != null) {spoilsOfWar.addCard(c1);}
+					if(c2 != null) {spoilsOfWar.addCard(c2);}
+				}
+				System.out.println(spoilsOfWar.size());
+			}
+			if((hand1.size() == 0 || hand2.size() == 0)) {
+				gameOver = true;
+			}
+
+			System.out.println("Hit enter...");
+			//input.nextLine();
+		}
+
+		if (hand1.size() == 0) {
+			System.out.println("\nPlayer 2 wins the game!");
+		}
+		else {
+			System.out.println("\nPlayer 1 wins the game!");
+		}
+
+
+	}
+
+	public static void printWelcome() {
+
+		System.out.println("\n\nWelcome to the card game War.  Each player gets");		
+		System.out.println("half of the deck, and each throws out his/her next");		
+		System.out.println("card.  The high card takes both cards, and the game");		
+		System.out.println("is over when someone has all of the cards.  In the");		
+		System.out.println("case of a tie, we will each put face down three");		
+		System.out.println("additional cards then throw out a card face up.  High ");		
+		System.out.println("card gets all the card on the table.  Ready to play?");		
+		System.out.println("\nHit enter...");		
+
+	}
+
+}

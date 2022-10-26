@@ -1,0 +1,27 @@
+// var json = {
+// 	"toys":
+// 	{"he-man":1984,"transformers":1985,"mask":1985},
+// 	"cereals":
+// 	["captain crunch","fruity pebbles","sugar bears"]
+	
+// }
+
+// json.cereals[1] == fruity pebbles
+// json.toys.he-man == 1984
+
+
+var teams = {
+	"playoffsmade":
+	{"rockets":27,"trailblazers":29,"nuggets":24,"lakers":60,"heat":17},
+	"wins2020":
+	[
+	{"rockets":44},
+	{"trailblazers":35},
+	{"nuggets":46},
+	{"lakers":52},
+	{"heat":44}
+	]	
+	"states":
+	{"rockets":"texas","trailblazers":"oregon","nuggets":"colorado","lakers":"california","heat":"florida"}
+
+}

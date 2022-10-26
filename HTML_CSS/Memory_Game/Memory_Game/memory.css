@@ -1,0 +1,125 @@
+.hidden {
+	visibility: hidden;
+}
+img {
+    max-width: 100%;
+    max-height: 130%;
+}
+#title{
+	text-align: center;
+	font-size:2em;
+	font-family: Courier;
+}
+body{
+	background-image: url("bg.jpg")
+}
+#copywrite{
+	position: absolute;
+	bottom:5%;
+	left:45%;
+}
+#match{
+	font-family: Courier;
+	position: absolute;
+	top:2%;
+	left:20%;
+	font-size: 1.5em;
+}
+#button{
+	font-family: courier;
+	position: absolute;
+	top: 10%
+}
+.card{
+	position: absolute;
+	width: 15%;
+	height:15%;
+	border-width: 2px;
+	border-color: black;
+	font-size: 8em;
+	text-align: center;
+}
+#reset{
+
+	font-size: 2.5em;
+}
+#row11{
+	left:10%;
+	top:10%;
+	
+}
+#row12{
+	left:30%;
+	top:10%;
+	
+}
+#row13{
+	left:50%;
+	top:10%;
+	
+}
+#row14{
+	left:70%;
+	top:10%;
+	
+}
+#row21{
+	left:10%;
+	top:30%;
+	
+}
+#row22{
+	left:30%;
+	top:30%;
+	
+}
+#row23{
+	left:50%;
+	top:30%;
+	
+}
+#row24{
+	left:70%;
+	top:30%;
+	
+}
+#row31{
+	left:10%;
+	top:50%;
+	
+}
+#row32{
+	left:30%;
+	top:50%;
+	
+}
+#row33{
+	left:50%;
+	top:50%;
+	
+}
+#row34{
+	left:70%;
+	top:50%;
+	
+}
+#row41{
+	left:10%;
+	top:70%;
+	
+}
+#row42{
+	left:30%;
+	top:70%;
+	
+}
+#row43{
+	left:50%;
+	top:70%;
+	
+}
+#row44{
+	left:70%;
+	top:70%;
+	
+}

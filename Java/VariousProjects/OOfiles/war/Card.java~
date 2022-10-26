@@ -1,0 +1,86 @@
+
+
+
+public class Card {
+
+	private int rank;
+	private int suit;
+	public static final int DIAMOND=1;
+	public static final int CLUB=2;
+	public static final int HEART=3;
+	public static final int SPADE=4;
+
+
+	//default constructor
+	public Card() {
+		//set rank to default value
+
+
+		//set suit to default value
+
+
+	}
+
+	//constructor where rank and suit are passed in
+	public Card(int r, int s) {
+		//check to see if r and s are valid
+		//  if they are, set rank/suit
+		//  else set them to default values
+
+	}
+
+
+	public int getSuit() {
+
+
+	}
+
+	public int getRank() {
+
+
+
+	}
+
+	
+	public void setRank(int r) {
+
+
+	}
+
+	public void setSuit(int s) {
+
+
+
+	}
+
+	public String toString() {
+		String s="";
+
+		if (rank == 14) {
+			s = s + "A";
+		}
+
+
+		if(suit == DIAMOND) {
+			s += "D";
+		}
+
+		return s;
+	}
+	
+	public int compareTo(Card c) {
+
+		if(rank > c.getRank()) {
+			return 1;
+		}
+		else if (rank < c.getRank()) {
+			return -1;
+		}
+		else {
+			return 0;
+		}
+
+
+	}
+
+}

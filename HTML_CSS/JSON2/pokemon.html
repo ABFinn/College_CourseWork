@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<script>
+	var data;
+	$(document).ready(function () {
+
+		$("#loadJSON").click(function () {
+
+			data = $.getJSON("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json", function(json) {
+
+				//build up a string containing canadian and australian exchange rate info
+				var poke = json.pokemon;
+				var s = "";
+				
+				//idk
+				// $.each(poke.name, function(){
+				// 		$.each(this, function(idk){
+				// 			alert(idk);
+				// 	});
+				// });
+				// // });
+				
+				//this works
+				for(var i=0;i < poke.length;i++){
+
+					s=s+poke[i].name
+					s=s+ "<img src='" + poke[i].img + "'/> <br>";
+				}
+				
+
+
+				//then set html of 'text' paragraph to this string
+				$("#text").html(s);
+			});
+
+		});
+
+	});
+	</script>
+	<p id="text"> Test </p>
+
+	<button id="loadJSON"> Load JSON </button>
+</body>
+</html>

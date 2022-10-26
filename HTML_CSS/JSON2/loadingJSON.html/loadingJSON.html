@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+	var data;
+	$(document).ready(function () {
+
+		$("#loadJSON").click(function () {
+
+			data = $.getJSON("https://api.exchangerate-api.com/v4/latest/USD", function(json) {
+
+				//build up a string containing canadian and australian exchange rate info
+				var rates = json.rates;
+				var s = "";
+				$.each(rates, function(key, value){
+					s = s + key + ": " + value + "<br>";
+				});
+				
+
+
+				//then set html of 'text' paragraph to this string
+				$("#text").html(s);
+			});
+
+		});
+
+	});
+
+</script>
+
+</head>
+
+
+<body>
+
+<p id="text"> Nothing yet.... </p>
+
+<button id="loadJSON"> Load JSON </button>
+
+</body>
+
+
+</html>

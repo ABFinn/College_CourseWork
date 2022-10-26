@@ -1,0 +1,7 @@
+MEM 3 0
+MEM 4 1
+LOAD 2 0
+LOAD 1 1
+MUL 1 2 1
+OUT 1
+IN 0
